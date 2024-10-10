@@ -55,4 +55,7 @@ describe("QueryProcessor", () => {
     test('should return sum of three numbers', () => {
         expect(QueryProcessor("what is 1 plus 2 plus 3?")).toBe("6");
     });
+    test('should return power of two numbers', () => {
+        expect(QueryProcessor("what is 2 to the power of 3?")).toBe("8");
+    });
 });

@@ -1,5 +1,11 @@
 
 export default function QueryProcessor(query: string): string {
+  const powerMatch = query.match(/what is (\d+) to the power of (\d+)/i);
+  if (powerMatch) {
+    const num1 = parseInt(powerMatch[1]);
+    const num2 = parseInt(powerMatch[2]);
+    return Math.pow(num1, num2).toString();
+  }
   const addMatch2 = query.match(/what is (\d+) plus (\d+) plus (\d+)/i);
   if (addMatch2) {
     const num1 = parseInt(addMatch2[1]);
