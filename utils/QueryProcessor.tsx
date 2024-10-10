@@ -1,6 +1,13 @@
 
 export default function QueryProcessor(query: string): string {
-  const newMatch = query.match(/what is (\d+) mupltiplied by (\d+) plus (\d+)/i);
+  const new2Match = query.match(/what is (\d+) plus (\d+) multiplied by (\d+)/i);
+  if (new2Match) {
+    const num1 = parseInt(new2Match[1]);
+    const num2 = parseInt(new2Match[2]);
+    const num3 = parseInt(new2Match[3]);
+    return ((num1 + num2) * num3).toString();
+  }
+  const newMatch = query.match(/what is (\d+) multiplied by (\d+) plus (\d+)/i);
   if (newMatch) {
     const num1 = parseInt(newMatch[1]);
     const num2 = parseInt(newMatch[2]);

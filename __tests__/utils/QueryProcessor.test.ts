@@ -59,6 +59,9 @@ describe("QueryProcessor", () => {
         expect(QueryProcessor("what is 2 to the power of 3?")).toBe("8");
     });
     test('should return sum of three numbers', () => {
-        expect(QueryProcessor("what is 1 mupltiplied by 2 plus 3?")).toBe("5");
+        expect(QueryProcessor("what is 1 multiplied by 2 plus 3?")).toBe("5");
+    });
+    test('should return sum of three numbers', () => {
+        expect(QueryProcessor("what is 1 plus 2 multiplied by 3?")).toBe("9");
     });
 });
