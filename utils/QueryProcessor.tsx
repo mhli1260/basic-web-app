@@ -36,6 +36,26 @@ export default function QueryProcessor(query: string): string {
     const max = num1 > num2 ? num1 : num2;
     return max > num3 ? max.toString() : num3.toString();
     
+  } else if (query.toLowerCase().includes("which of the following numbers are primes")) {
+    
+    query = query.split(":")[1].trim();
+    
+    const numbers: number[] = query.split(",").map((num) => parseFloat(num.trim()));
+    
+    const primes = numbers.filter((num) => {
+      if (num === 1 || num === 0) {
+        return false;
+      }
+      for (let i = 2; i < num; i++) {
+        if (num % i === 0) {
+          return false;
+        }
+      }
+      return true;
+    });
+    //return primes.toString();
+    return primes.join(", ").toString();
+
   }
 
   return "";

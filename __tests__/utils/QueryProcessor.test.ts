@@ -47,4 +47,9 @@ describe("QueryProcessor", () => {
     test('should return difference of two numbers', () => {
         expect(QueryProcessor("what is 5 minus 2?")).toBe("3");
     });
+    test('should return prime numbers', () => {
+        const query = "Which of the following numbers are primes: 1, 2, 3, 4, 5?";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe("2, 3, 5");
+    });
 });
