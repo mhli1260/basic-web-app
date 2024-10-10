@@ -25,4 +25,20 @@ describe("QueryProcessor", () => {
             "Your Andrew ID is mhli."
           ));
     });
+
+    // test('should return name ', () => {
+    //     const query = "what is your name";
+    //     const response: string = QueryProcessor(query);
+    //     expect(response).toBe((
+    //         "Mia"
+    //       ));
+    // });
+    test('should return sum of two numbers', () => {
+        expect(QueryProcessor("what is 1 plus 2?")).toBe("3");
+    });
+    test('should return largest number', () => {
+        const query = "Which of the following numbers is the largest: 1, 2, 3?";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe("3");
+    });
 });
