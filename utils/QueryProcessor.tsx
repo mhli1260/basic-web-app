@@ -1,5 +1,12 @@
 
 export default function QueryProcessor(query: string): string {
+  const newMatch = query.match(/what is (\d+) mupltiplied by (\d+) plus (\d+)/i);
+  if (newMatch) {
+    const num1 = parseInt(newMatch[1]);
+    const num2 = parseInt(newMatch[2]);
+    const num3 = parseInt(newMatch[3]);
+    return (num1 * num2 + num3).toString();
+  }
   const powerMatch = query.match(/what is (\d+) to the power of (\d+)/i);
   if (powerMatch) {
     const num1 = parseInt(powerMatch[1]);
