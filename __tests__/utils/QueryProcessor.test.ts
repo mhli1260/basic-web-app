@@ -44,4 +44,7 @@ describe("QueryProcessor", () => {
         const response: string = QueryProcessor(query);
         expect(response).toBe("3");
     });
+    test('should return difference of two numbers', () => {
+        expect(QueryProcessor("what is 5 minus 2?")).toBe("3");
+    });
 });

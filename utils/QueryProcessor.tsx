@@ -12,6 +12,12 @@ export default function QueryProcessor(query: string): string {
     const num2 = parseInt(multiplyMatch[2]);
     return (num1 * num2).toString();
   }
+  const subtractMatch = query.match(/what is (\d+) minus (\d+)/i);
+  if (subtractMatch) {
+    const num1 = parseInt(subtractMatch[1]);
+    const num2 = parseInt(subtractMatch[2]);
+    return (num1 - num2).toString();
+  }
   if (query.toLowerCase().includes("shakespeare")) {
     return (
       "William Shakespeare (26 April 1564 - 23 April 1616) was an " +
@@ -29,11 +35,7 @@ export default function QueryProcessor(query: string): string {
     const [num1, num2, num3] = numbers;
     const max = num1 > num2 ? num1 : num2;
     return max > num3 ? max.toString() : num3.toString();
-    // const query_array = query.split(",");
-    // const num1 = query[0].trim();
-    // const num2 = query[1].trim();
-    // const num3 = query[2].trim();
-    // return (Math.max(num1, num2, num3)).toString();
+    
   }
 
   return "";
