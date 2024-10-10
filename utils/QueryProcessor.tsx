@@ -1,11 +1,19 @@
 
 export default function QueryProcessor(query: string): string {
+  const addMatch2 = query.match(/what is (\d+) plus (\d+) plus (\d+)/i);
+  if (addMatch2) {
+    const num1 = parseInt(addMatch2[1]);
+    const num2 = parseInt(addMatch2[2]);
+    const num3 = parseInt(addMatch2[3]);
+    return (num1 + num2 + num3).toString();
+  }
   const addMatch = query.match(/what is (\d+) plus (\d+)/i);
   if (addMatch) {
     const num1 = parseInt(addMatch[1]);
     const num2 = parseInt(addMatch[2]);
     return (num1 + num2).toString();
   }
+  
   const multiplyMatch = query.match(/what is (\d+) multiplied by (\d+)/i);
   if (multiplyMatch) {
     const num1 = parseInt(multiplyMatch[1]);
@@ -53,7 +61,6 @@ export default function QueryProcessor(query: string): string {
       }
       return true;
     });
-    //return primes.toString();
     return primes.join(", ").toString();
 
   }

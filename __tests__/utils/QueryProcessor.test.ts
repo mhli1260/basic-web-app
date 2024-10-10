@@ -52,4 +52,7 @@ describe("QueryProcessor", () => {
         const response: string = QueryProcessor(query);
         expect(response).toBe("2, 3, 5");
     });
+    test('should return sum of three numbers', () => {
+        expect(QueryProcessor("what is 1 plus 2 plus 3?")).toBe("6");
+    });
 });
